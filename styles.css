@@ -110,7 +110,7 @@ body, html {
 	padding: 5px;
 }
 
-.hobbies {
+.projects {
 
 	border: 2px solid black;
 	display: none;
@@ -124,11 +124,11 @@ body, html {
 	column-gap: 5%;
 }
 
-.hobbies > div {
+.projects > div {
 	padding: 10px;
 }
 
-.hobbies > div > img {
+.projects > div > img {
 	width: 50%;
 }
 
@@ -245,7 +245,7 @@ body, html {
 		
 	}
 	
-	.hobbies {
+	.projects {
 		
 		grid-column: 1 / 13;
 		grid-row: 3/5;
@@ -320,7 +320,7 @@ body, html {
 		
 	}
 	
-	.hobbies {
+	.projects {
 		grid-column: 1 / 13;
 		grid-row: 3/5;
 		
