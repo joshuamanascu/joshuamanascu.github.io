@@ -1,0 +1,220 @@
+<!-- Author: Joshua Manascu (260 870 343) -->
+
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	
+		<script>
+			
+			function toggle(button) {
+				
+				var accords = document.getElementsByClassName("panel");
+				
+				
+				var element = button.nextElementSibling;
+				
+				
+				if (element.style.display == "block") {
+					element.style.display = "none";
+					button.classList.remove("active");
+					
+				}
+				else {
+					element.style.display = "block";
+					button.classList.add("active");
+				}
+			}
+			
+			function menu_toggle() {
+				
+				var buttons = document.getElementsByClassName("menu_dropdown");
+				
+				
+				
+				if (buttons[0].style.display == "inline-block") {
+					
+					buttons[0].style.display = "none";
+					
+				}
+				else {
+					buttons[0].style.display = "inline-block";
+					
+				}
+				
+			}
+			
+			function change_page(page) {
+				var cv = document.getElementsByClassName("cv")[0];
+				var hobbies = document.getElementsByClassName("hobbies")[0];
+				
+				var menu_buttons = document.getElementsByClassName("menu_button");
+				
+				if (page == "home") {
+					cv.style.display = "block";
+					
+					hobbies.style.display = "none";
+					
+					menu_buttons[0].setAttribute("style", "border: 2px solid black;")
+					menu_buttons[1].setAttribute("style", "border: none;")
+					menu_buttons[2].setAttribute("style", "border: 2px solid black;")
+					menu_buttons[3].setAttribute("style", "border: none;")
+				}
+				else {
+					cv.style.display = "none";
+					
+					hobbies.style.display = "grid";
+					
+					menu_buttons[0].setAttribute("style", "border: none;")
+					menu_buttons[1].setAttribute("style", "border: 2px solid black;")
+					menu_buttons[2].setAttribute("style", "border: none;")
+					menu_buttons[3].setAttribute("style", "border: 2px solid black;")
+				}
+			}
+		
+		</script>
+		
+		
+	</head>
+	
+	<body>
+		
+			<div class="grid-parent">
+				
+			<!-- HEADER -->
+				<div class="header">
+					<h2 style="text-align: center; margin-top: 10px;">Joshua Manascu</h2>
+					<div class="menu">
+						<button class="menu_button" style="border: 2px solid black;" onclick="change_page('home')">Home</button>
+						<button class="menu_button" onclick="change_page('hobbies')">Hobbies</button>
+					</div>
+					
+					<a href="javascript:void(0);" onclick="menu_toggle()">
+						<div class="burger_container">
+							<div class="hamburger"></div>
+							<div class="hamburger"></div>
+							<div class="hamburger"></div>
+							
+						</div>
+					</a>
+				</div>
+				
+				<div class="menu_dropdown">
+					<button class="menu_button" style="border: 2px solid black;" onclick="change_page('home')">Home</button>
+					<button class="menu_button" onclick="change_page('hobbies')">Hobbies</button>
+				</div>
+				
+			<!-- CONTENT -->
+				
+				<!-- SIDEBAR -->
+				
+				<div class="sidebar">
+					<img src="JoshuaManascu.jpg">
+					<p>Hello there! <br> I am a third year undergraduate student at McGill, currently pursuing
+						my Bachelor's of Science. I am in the process of completing a major in Computer Science with a minor in Physics.
+					</p>
+					
+					<a style="float: center; font-size: 15px;" href="mailto:joshua.manascu@mail.mcgill.ca">Email</a>
+					<a style="float: center; font-size: 15px;" href="https://github.com/joshuamanascu">Github</a></p>
+				</div>
+				
+				<!-- Accordion -->
+				<div class="cv"> 
+					<button class="accordion" onclick="toggle(this)">Education</button>
+					<div class="panel">
+					  <table>
+						  <tr>
+							<th>Program</th>
+							<th>School</th>
+							<th>Status</th>
+						  </tr>
+						  <tr>
+							  <td>Bachelor of Science: Major Computer Science, Minor Physics</td>
+							  <td>McGill University</td>
+							  <td>Ongoing</td>
+						  </tr>
+						  <tr>
+							  <td>Diploma of College Studies: Pure and Applied Science</td>
+							  <td>Dawson College</td>
+							  <td>Completed - 2018</td>
+						  </tr>
+					  </table>
+					</div>
+
+					<button class="accordion" onclick="toggle(this)">Work Experience</button>
+					<div class="panel">
+					  <table>
+						  <tr>
+							<th>Position</th>
+							<th>Employer</th>
+							<th>Status</th>
+						  </tr>
+						  <tr>
+							  <td>Computer Programming Instructor</td>
+							  <td>Real Programming 4 Kids</td>
+							  <td>Currently Employed</td>
+						  </tr>
+						  <tr>
+							  <td>Census Enumerator</td>
+							  <td>Statistics Canada</td>
+							  <td>Completed - 2021</td>
+						  </tr>
+					  </table>
+					</div>
+
+					<button class="accordion" onclick="toggle(this)" >Skills</button>
+					<div class="panel" style="overflow: scroll;">
+						<h4>Languages</h4>
+						<ul>
+							<li>English (Written and Spoken) - Proficient</li>
+							<li>French (Written and Spoken) - Proficient</li>
+						</ul>
+						
+						<h4>Skills</h4>
+						<ul>
+							<li>Experience working with C, Java, Python, OCaml, and bash</li>
+							<li>Experience debugging</li>
+							<li>Knowledge of Linux</li>
+							<li>Version control using git</li>
+							<li>Mathematical Skills include Calculus, Linear Algebra, Discrete Mathematics</li>
+							
+						</ul>
+					</div> 
+				</div>
+				
+				
+				
+				<div class="hobbies">
+					<div style="grid-column: 1; grid-row: 1;"><h2>Curling</h2></div>
+					<div style="grid-column: 1; grid-row: 2;"><img src="curling.png"></img></div>
+					<div style="grid-column: 1; grid-row: 3;"><p>Curling has been my sport of choice for many years. It's a very
+						strategic game, requiring time between the action to plan and consider what the optimal move is. I find this kind of slower-paced
+						sport very enjoyable.</p></div>
+						
+					<div style="grid-column: 2; grid-row: 1;"><h2>History</h2></div>
+					<div style="grid-column: 2; grid-row: 2;"><img src="rome.png"></img></div>
+					<div style="grid-column: 2; grid-row: 3;"><p>I have always been interested in history. I like reading history books and listening to history
+					podcasts. Of particular interest are ancient roman history and French history, especially in the years following the French Revolution.</p></div>
+					
+					<div style="grid-column: 3; grid-row: 1;"><h2>Video Games</h2></div>
+					<div style="grid-column: 3; grid-row: 2;"><img src="Triforce_Expanded_Gold.png"></img></div>
+					<div style="grid-column: 3; grid-row: 3;"><p>I'm a gamer. Always have been. I have always loved the Zelda series of games, but I'm also
+					an avid PC gamer.</p></div>
+						
+					
+				</div>
+				
+			<!-- FOOTER -->
+				<div class="footer">
+					<p style="margin: 0; margin-top: 5px; text-align: center; font-size: 13px">Made by me, myself, and I.</p>
+				</div>
+			</div>
+		
+		
+	</body>
+
+
+</html>
